@@ -1,0 +1,25 @@
+seed: 42
+
+dataset:
+  name: go_emotions
+  num_labels: 28
+  max_length: 64
+
+training:
+  epochs: 3
+  learning_rate: 2.0e-5
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+
+evaluation:
+  threshold: 0.5
+  primary_metric: macro_f1
+
+models:
+  bert: google-bert/bert-base-uncased
+  roberta: FacebookAI/roberta-base
+  distilbert: distilbert/distilbert-base-uncased
+  deberta: microsoft/deberta-v3-base
+  albert: albert/albert-base-v2
